@@ -1,0 +1,42 @@
+h1 {
+  margin-bottom: 1rem;
+}
+
+input, textarea, select {
+  padding: 10px 20px;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+input[type='button'], button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+input[type='button']:hover, button:hover {
+  opacity: .8;
+}
+
+.navbar {
+  background-color: var(--primary);
+  padding: 1rem 3rem;
+}
+.cash-in {
+  background-color: green !important;
+}
+
+.left-content {
+  background-color: white;
+}
+.right-content {
+
+}
+.main-layout {
+  display: flex;
+}

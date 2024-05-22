@@ -1,3 +1,7 @@
+@import url('colors.css');
+@import url('./common.css');
+@import url('./theme.css');
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
