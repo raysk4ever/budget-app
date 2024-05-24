@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import AddExpense from "./components/add-expense";
 import ExpenseList from "./components/expense-list";
@@ -10,10 +10,7 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <main className={styles.main}>
-     <section className={styles.rowContainer}>
-        <ExpenseList />
-        <AddExpense/>
-     </section>
+      <section className={styles.rowContainer}>hi</section>
     </main>
   );
 }
