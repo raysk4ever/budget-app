@@ -20,13 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} main-layout`}>
-        <Sidebar/>
-        <section className="right-content">
-          <Nav />
-          {children}
-        </section>
-      </body>
+      <body className={`${inter.className} main-layout`}>{children}</body>
     </html>
   );
 }
