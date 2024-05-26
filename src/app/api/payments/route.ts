@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
             message: 'Successfully fetched the payments',
             payments,
         })
-    } catch (error) {
+    } catch (error: any) {
         return Response.json({
             error: error.message
         })
