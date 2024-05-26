@@ -14,5 +14,6 @@ export const connect = async () => {
 
 export const COLLECTIONS = {
   CATEGORIES: 'categories',
+  PAYMENTS: 'payments'
 
 }
