@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Sidebar = () => {
   const sideItems = [
-    { name: "Home", Icon: GoHome, route: "/home" },
+    { name: "Home", Icon: GoHome, route: "/" },
     { name: "Payments", Icon: BsPiggyBank, route: "/payment" },
     { name: "Budgets", Icon: MdPayment, route: "/budget" },
     { name: "Setting", Icon: IoSettingsOutline, route: "/setting" },

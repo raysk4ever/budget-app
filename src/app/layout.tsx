@@ -27,7 +27,9 @@ export default function RootLayout({
         <section className="sub-container">
           <Sidebar />
           {/* <Content /> */}
-          {children}
+          <div className="active-sub-content">
+            {children}
+          </div>
         </section>
         {/* </main> */}
       </body>
