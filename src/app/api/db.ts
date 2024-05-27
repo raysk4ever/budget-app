@@ -11,3 +11,9 @@ export const connect = async () => {
       db
     }
 }
+
+export const COLLECTIONS = {
+  CATEGORIES: 'categories',
+  PAYMENTS: 'payments'
+
+}
