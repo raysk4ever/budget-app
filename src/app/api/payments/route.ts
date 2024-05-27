@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server';
 import { connect, COLLECTIONS } from '../db'
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
     try {
         const {db} = await connect()
