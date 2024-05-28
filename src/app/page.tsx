@@ -10,15 +10,12 @@ import Content from "./component-ui/content";
 
 import styles from "../styles/page.module.css";
 import styled from "styled-components";
+import Home from "./home/page";
 
-export default function Home() {
+export default function Page() {
   return (
     <main className="main-container">
-      {/* <Navbar />
-      <section className="sub-container">
-        <Sidebar />
-        <Content />
-      </section> */}
+      <Home />
     </main>
   );
 }

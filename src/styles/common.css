@@ -99,3 +99,25 @@ li{
 .active-sub-content {
   padding: 1rem;
 }
+
+.card-stats-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+.card-stats-item {
+  background-color: #eee;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  background-color: #F9B0B0;
+}
+.card-stats-item .amount {
+  font-size: 2em;
+}
+.card-stats-item .amount-wrapper {
+  display: flex;
+  align-items: center;
+
+}
