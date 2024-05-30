@@ -1,8 +1,7 @@
 import SendsLineChart from '@/components/SendsLineChart';
 import Stats from '@/components/stats';
 
-const Home = () => {
-  
+const Home = () => {  
   return (
    <>
     <Stats />

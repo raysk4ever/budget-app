@@ -1,3 +1,4 @@
+"use client"
 import { lineDate } from '@/MOCK/charts'
 import { ResponsiveLine } from '@nivo/line'
 
@@ -10,7 +11,7 @@ export default function SendsLineChart() {
         </>
     )
 }
-const MyResponsiveLine = ({ data }) => (
+const MyResponsiveLine = ({ data }: { data: typeof lineDate }) => (
     <ResponsiveLine
         data={data}
         curve='catmullRom'

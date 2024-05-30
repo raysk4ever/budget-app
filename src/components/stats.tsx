@@ -1,10 +1,5 @@
 "use client"
 import { FaRupeeSign } from 'react-icons/fa'
-// import dynamic from "next/dynamic";
-
-// const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
-//   ssr: false,
-// });
 
 const Stats = () => {
   const income = 150000
