@@ -1,0 +1,29 @@
+@keyframes rainbow {
+    0% {
+      background-color: hwb(0deg 85.87% 1.46%);
+    }
+    20% {
+      background-color: hwb(72deg 85.87% 1.46%);
+    }
+    40% {
+      background-color: hwb(144deg 85.87% 1.46%);
+    }
+    60% {
+      background-color: hwb(216deg 85.87% 1.46%);
+    }
+    80% {
+      background-color: hwb(288deg 85.87% 1.46%);
+    }
+    100% {
+      background-color: hwb(360deg 85.87% 1.46%);
+    }
+}
+
+@keyframes fadein {
+    0% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+}

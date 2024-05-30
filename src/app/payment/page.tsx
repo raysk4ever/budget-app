@@ -1,5 +1,18 @@
+import CategoryChart from "@/components/CategoryChart";
+import Table from "@/components/Table";
+import Stats from "@/components/stats";
+
 const Payment = () => {
-  return <h1>Ready to save money!!</h1>;
+  return (
+    <>
+      <Stats />
+      <div className="payment-overview-container">
+        <Table />
+        <CategoryChart />
+      </div>
+
+    </>
+  );
 };
 
 export default Payment;
