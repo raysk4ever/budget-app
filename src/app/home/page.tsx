@@ -1,5 +1,13 @@
-const Home = () => {
-  return <h1>Welcome home!</h1>;
+import SendsLineChart from '@/components/SendsLineChart';
+import Stats from '@/components/stats';
+
+const Home = () => {  
+  return (
+   <>
+    <Stats />
+    <SendsLineChart />
+   </>
+  )
 };
 
 export default Home;

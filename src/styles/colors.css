@@ -2,5 +2,8 @@
   --primary: #c5283d;
   --primary-dark: #481d24;
   --primary-light: #acedff;
+  --primary-light-2: rgb(216, 236, 255);
   --blue: rgb(0 51 128);
+  --brown: #443535;
+  --text-color: #443535;
 }
