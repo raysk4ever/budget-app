@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nivo/bar": "^0.87.0",
+    "@nivo/line": "^0.87.0",
+    "@nivo/pie": "^0.87.0",
     "mongodb": "^6.6.2",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.2.1",
     "styled-components": "^6.1.11",
     "zod": "^3.23.8"
   },
@@ -20,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "babel-plugin-inline-react-svg": "^2.0.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "typescript": "^5"

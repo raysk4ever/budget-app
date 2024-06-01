@@ -1,0 +1,8 @@
+@media screen and (max-width: 1000px) {
+    .payment-overview-container {
+        flex-direction: column-reverse;
+    }
+    .category-chart-wrapper {
+        width: 100%;
+    }
+}
