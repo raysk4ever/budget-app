@@ -6,6 +6,7 @@ import useCategory from "@/hooks/use-category"
 import { CategoryT, allCategoryAtom } from "@/state/atom"
 import { useAtom } from "jotai"
 import { ChangeEventHandler, useState } from "react"
+import { BiRupee } from "react-icons/bi"
 import Skeleton from "react-loading-skeleton"
 
 export default function Categories() {
@@ -79,9 +80,10 @@ export default function Categories() {
                 <h3>No Category added yet</h3>
             </>) : (
                 <section className="category-list-wrapper">
-                    {categories.map((i, index) => (<div className="category-item card" key={index}>
+                    {categories.map((i, index) => (<div className="card category-item " key={index}>
                         <img alt='category-img' src={i.pic ?? '/learn.png'} width={100} />
                         <p>{i.name ?? 'No Name'}</p>
+                        <span className="">Rs. 1000</span>
                     </div>))}
                 </section>
             )}
