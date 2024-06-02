@@ -15,5 +15,6 @@ export const connect = async () => {
 export const COLLECTIONS = {
   CATEGORIES: 'categories',
   PAYMENTS: 'payments'
-
 }
+
+export type TCOLLECTIONS = keyof typeof COLLECTIONS

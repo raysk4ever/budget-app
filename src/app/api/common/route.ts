@@ -1,5 +1,7 @@
 import {ZodError, z} from 'zod'
-import { connect, COLLECTIONS } from '../db';
+import { connect, COLLECTIONS, TCOLLECTIONS } from '../db';
+
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
@@ -33,11 +35,14 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
   const {db} = await connect()
-  const collection = COLLECTIONS.CATEGORIES
+  const { searchParams } = new URL(req.url);
+  const type = searchParams.get('type')?.toUpperCase() as TCOLLECTIONS ?? 'CATEGORIES'
+  const collection = COLLECTIONS[type]
   const all = await db.collection(collection).find().toArray()
   return Response.json({
-    all
+    type,
+    data: all
   });
 }

@@ -221,6 +221,7 @@ li{
   width: fit-content;
   padding: 1rem 2rem;
   transition: all .1s;
+  min-height: 150px;
 }
 
 .category-item:hover {
@@ -228,8 +229,10 @@ li{
   transform: scale(1.1);
   cursor: pointer;
 }
+
 .category-item p {
   font-weight: bold;
+  margin-top: auto;
 }
 
 .category-list-wrapper {
@@ -237,4 +240,10 @@ li{
   gap: 2rem;
   margin-top: 1rem;
   flex-wrap: wrap;
+}
+
+.skeleton-category > span {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }

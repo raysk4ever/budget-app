@@ -12,6 +12,10 @@ input, textarea, select {
   resize: none;
 }
 
+input.ablue {
+  background-color: aliceblue;
+}
+
 input[type='button'], button {
   background-color: var(--primary);
   border: none;
@@ -93,4 +97,18 @@ input[type='button']:hover, button:hover {
 
 .modal-body {
   flex: 1;
+}
+.add-category-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.add-category-footer button {
+  background-color: #1c8025;
+}
+
+.error {
+  transition: all .1s;
+  color: #e01515;
+  animation: fade .1s;
 }

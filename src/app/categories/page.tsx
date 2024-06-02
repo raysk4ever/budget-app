@@ -2,20 +2,56 @@
 
 import Modal from "@/components/modal"
 import { DEFAULT_CATEGORIES_ICONS } from "@/config/settings"
+import useCategory from "@/hooks/use-category"
 import { CategoryT, allCategoryAtom } from "@/state/atom"
 import { useAtom } from "jotai"
 import { ChangeEventHandler, useState } from "react"
+import Skeleton from "react-loading-skeleton"
 
 export default function Categories() {
-    const [categories, setCategories] = useAtom(allCategoryAtom)
+    // const [categories, setCategories] = useAtom(allCategoryAtom)
     const [crrCategory, setCrrCategory] = useState<CategoryT>({
         name: '',
         pic: ''
     })
     const [open, setOpen] = useState(false)
     const [activeIcon, setActiveIcon] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
+    const {categories, setCategories, isLoading} = useCategory()
 
+    const saveCategory = async () => {
+        await fetch('/api/common', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: {
+                    ...crrCategory,
+                    pic: activeIcon
+                },
+                type: 'categories'
+            })
+        })
+    }
     const handleOnAddCategory = () => {
+        if (!crrCategory.name) {
+            setErrorMessage(() => 'Please enter a valid Category name!')
+            return
+        }
+        if (!activeIcon) {
+            setErrorMessage(() => 'Please select Category picture!')
+            return
+        }
+        const isAlreadyPresent = categories.find(c => c.name === crrCategory.name)
+        if (isAlreadyPresent) {
+            setErrorMessage(() => 'Category name already present!')
+            return 
+        }
+        if (errorMessage) {
+            setErrorMessage('')
+        }
+        saveCategory()
         setCrrCategory({
             name: '',
             pic: ''
@@ -31,24 +67,28 @@ export default function Categories() {
             [name]: value
         }))
     }
+    
     return (
         <>
             <h1>Categories</h1>
             <button onClick={() => setOpen(cr => !cr)}>Add new Category</button>
-            {categories.length === 0 ? (<>
+            {isLoading && (
+                <CategoryLoadingList />
+            )}
+            {!isLoading && categories.length === 0 ? (<>
                 <h3>No Category added yet</h3>
             </>) : (
                 <section className="category-list-wrapper">
                     {categories.map((i, index) => (<div className="category-item card" key={index}>
-                        <img alt='category-img' src={i.pic} width={100} />
-                        <p>{i.name}</p>
+                        <img alt='category-img' src={i.pic ?? '/learn.png'} width={100} />
+                        <p>{i.name ?? 'No Name'}</p>
                     </div>))}
                 </section>
             )}
             <Modal open={open} title='Add new Category' onClose={() => setOpen(cr => !cr)}>
                 <div className="form-item">
                     <p>Name</p>
-                    <input value={crrCategory.name} name='name' placeholder="add new category here" onChange={onChange} />
+                    <input autoFocus className="ablue" value={crrCategory.name} name='name' placeholder="eg. Travel" onChange={onChange} />
                 </div>
                 <div className="category-type-wrapper">
                     <p>Select Picture</p>
@@ -64,10 +104,19 @@ export default function Categories() {
                         ))}
                     </div>
                 </div>
-                <div>
+                <div className="add-category-footer">
                     <button onClick={handleOnAddCategory}>Add Category</button>
+                    <p className="error">{errorMessage}</p>
                 </div>
             </Modal>
         </>
+    )
+}
+
+const CategoryLoadingList = () => {
+    return (
+        <div className="skeleton-category">
+            <Skeleton borderRadius={20} width={170} height={170} count={5}></Skeleton>
+        </div>
     )
 }
