@@ -44,7 +44,7 @@ export default function Categories() {
             setErrorMessage(() => 'Please select Category picture!')
             return
         }
-        const isAlreadyPresent = categories.find(c => c.name === crrCategory.name)
+        const isAlreadyPresent = categories.find((c: any) => c.name === crrCategory.name)
         if (isAlreadyPresent) {
             setErrorMessage(() => 'Category name already present!')
             return 
@@ -57,7 +57,7 @@ export default function Categories() {
             name: '',
             pic: ''
         })
-        setCategories(crr => ([...crr, { name: crrCategory.name, pic: activeIcon }]))
+        setCategories((crr: any) => ([...crr, { name: crrCategory.name, pic: activeIcon }]))
         setOpen(crr => !crr)
     }
 
@@ -80,7 +80,7 @@ export default function Categories() {
                 <h3>No Category added yet</h3>
             </>) : (
                 <section className="category-list-wrapper">
-                    {categories.map((i, index) => (<div className="card category-item " key={index}>
+                    {categories.map((i: any, index: any) => (<div className="card category-item " key={index}>
                         <img alt='category-img' src={i.pic ?? '/learn.png'} width={100} />
                         <p>{i.name ?? 'No Name'}</p>
                         <span className="">Rs. 1000</span>
