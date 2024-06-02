@@ -12,6 +12,10 @@ input, textarea, select {
   resize: none;
 }
 
+input.ablue {
+  background-color: aliceblue;
+}
+
 input[type='button'], button {
   background-color: var(--primary);
   border: none;
@@ -19,8 +23,19 @@ input[type='button'], button {
   cursor: pointer;
   width: 100%;
 }
+button {
+  width: fit-content;
+  padding: 10px 1rem;
+  color: white;
+  margin: 1rem 0px;
+}
+
 input[type='button']:hover, button:hover {
   opacity: .8;
+}
+
+.primary {
+  color: var(--primary);
 }
 
 .navbar {
@@ -39,4 +54,61 @@ input[type='button']:hover, button:hover {
 }
 .main-layout {
   display: flex;
+}
+
+.modal-bg {
+  background-color: rgba(95, 95, 95, 0.359);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadein .2s ease-in-out;
+}
+.modal {
+  display: flex;
+  min-width: 500px;
+  max-width: 50%;
+  min-height: 400px;
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  margin-top: -50px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header .action-button {
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.modal-header .action-button:hover {
+  transform: scale(1.1);
+}
+
+.modal-body {
+  flex: 1;
+}
+.add-category-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.add-category-footer button {
+  background-color: #1c8025;
+}
+
+.error {
+  transition: all .1s;
+  color: #e01515;
+  animation: fade .1s;
 }
