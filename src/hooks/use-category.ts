@@ -1,21 +1,23 @@
-import { allCategoryAtom } from "@/state/atom"
+import { allCategoryAtom, allCategoryLoadingAtom } from "@/state/atom"
 import { useAtom } from "jotai"
 import { useCallback, useEffect, useState } from "react"
 
 export default function useCategory() {
     const [categories, setCategories] = useAtom(allCategoryAtom)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useAtom(allCategoryLoadingAtom)
 
     const fetchCategory = useCallback(async () => {
         setIsLoading(true)
         const response = await (await fetch('/api/common?type=categories')).json()
         setCategories(() => [...response.data])
         setIsLoading(false)
-    }, [setCategories])
+    }, [setCategories, setIsLoading])
 
     useEffect(() => {
-        fetchCategory()
-    }, [fetchCategory])
+        if (!categories.length) {
+            fetchCategory()
+        }
+    }, [fetchCategory, categories])
     
     
 
