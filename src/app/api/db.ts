@@ -16,5 +16,6 @@ export const COLLECTIONS = {
   CATEGORIES: 'categories',
   PAYMENTS: 'payments'
 }
+export const ALL_COLLECTIONS = Object.values(COLLECTIONS)
 
 export type TCOLLECTIONS = keyof typeof COLLECTIONS
