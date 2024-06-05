@@ -221,6 +221,15 @@ li{
   padding: 1rem 2rem;
   transition: all .1s;
   min-height: 150px;
+  position: relative;
+}
+
+.category-item .action-items {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  gap: 1rem;
 }
 
 .category-item:hover {

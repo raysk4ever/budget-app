@@ -38,6 +38,10 @@ input[type='button']:hover, button:hover {
   color: var(--primary);
 }
 
+.danger {
+  background-color: var(--primary) !important;
+}
+
 .navbar {
   background-color: var(--primary);
   padding: 1rem 3rem;
