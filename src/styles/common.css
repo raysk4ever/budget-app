@@ -47,7 +47,9 @@
 }
 
 .navbar-container{
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 1rem;
   background-color: hwb(0deg 85.87% 1.46%);
   animation: rainbow 20s infinite 0s linear;
@@ -73,10 +75,11 @@ li{
 .space-b {
   justify-content: space-between;
 }
-
+.active-sub-content-meta {
+  flex: 1;
+}
 .active-sub-content {
   padding: 1rem;
-  flex: 1;
   height: calc(100vh - 5rem);
   overflow: auto;
   background-color: #f1f1f1af;
@@ -89,11 +92,12 @@ li{
   display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .card-stats-item {
   background-color: #eee;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -106,7 +110,7 @@ li{
 .card-stats-item .amount-wrapper {
   display: flex;
   align-items: center;
-  width: 200px;
+  width: max-content;
   height: 50px;
 
 }
@@ -173,7 +177,7 @@ li{
   height: 30rem;
 }
 .category-chart-wrapper {
-  width: 50rem;
+  width: 40rem;
   height: 550px;
 }
 

@@ -1,6 +1,8 @@
-import CategoryChart from "@/components/CategoryChart";
-import Table from "@/components/Table";
-import Stats from "@/components/stats";
+import dynamic from 'next/dynamic'
+
+const Stats = dynamic(() => import('@/components/stats'))
+const Table = dynamic(() => import('@/components/Table'))
+const CategoryChart = dynamic(() => import('@/components/CategoryChart'))
 
 const Payment = () => {
   return (

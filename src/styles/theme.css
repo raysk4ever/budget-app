@@ -30,8 +30,9 @@ button {
   margin: 1rem 0px;
 }
 
-input[type='button']:hover, button:hover {
+input[type='button']:hover, input[type='submit']:hover, button:hover {
   opacity: .8;
+  cursor: pointer;
 }
 
 .primary {
