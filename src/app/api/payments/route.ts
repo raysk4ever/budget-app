@@ -24,3 +24,24 @@ export async function GET(req: NextRequest) {
         })
     }
 }
+
+export async function POST(req: NextRequest){
+    try{
+        const body = await req.json();
+        const {db} = await connect()
+        const transaction = await db.collection(COLLECTIONS.PAYMENTS).insertOne(body)
+
+        return Response.json({
+            message:'Successfully added the transaction',
+            transaction
+
+        })
+    }
+    catch(error:any){
+        return Response.json({
+            error: error.message
+        })
+    }
+
+
+}
