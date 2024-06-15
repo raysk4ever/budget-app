@@ -12,7 +12,7 @@ const options = [
   ];
 
 export default function Filters() {
-   const handleChange = (selectedOption) => {
+   const handleChange = () => {
    }
     return (
         <section className="filter-wrapper">
