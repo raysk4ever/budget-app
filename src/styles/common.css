@@ -8,7 +8,6 @@
 .sub-container{
   display: flex;
   flex: 1;
-  /* background-color: bisque; */
 }
 
 .sidebar-container{
@@ -83,6 +82,7 @@ li{
   background-color: #f1f1f1af;
   opacity: 0.1;
   animation: fadein .1s forwards;
+  position: relative;
 }
 
 .card-stats-wrapper {
@@ -237,9 +237,81 @@ li{
   gap: 1rem;
 }
 
-.add-item-container.active{
+.add-item-container.active {
   border: 1px solid pink;
   background-color: #f4cfda;
   border-radius: 10px;
+}
+.category-type-wrapper {
+  padding: 2rem 0px;
+}
 
+.category-picture-wrapper {
+  padding: 2rem 0px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-picture-wrapper img {
+  width: 70px;
+  height: 70px;
+}
+
+.category-picture-item {
+  padding: 10px;
+  border-radius: 10px;
+  transition: all .1s;
+  cursor: pointer;
+}
+.category-picture-item:hover {
+  transform: scale(1.2);
+  background-color: #eee;
+}
+.category-picture-item.active {
+  background-color: #deffdfb5;
+}
+
+.category-item {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: fit-content;
+  padding: 1rem 2rem;
+  transition: all .1s;
+  min-height: 150px;
+  position: relative;
+}
+
+.category-item .action-items {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  gap: 1rem;
+}
+
+.category-item:hover {
+  background-color: #f9f8b0c5;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.category-item p {
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.category-list-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.skeleton-category > span {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }

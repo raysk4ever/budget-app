@@ -1,0 +1,19 @@
+.budget-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-action-button {
+    padding: 1rem 2rem;
+    width: min-content;
+    color: white;
+    background-color: teal;
+}

@@ -1,18 +1,18 @@
 "use client";
-import Image from "next/image";
-import "../../styles/common.css";
-import Home from "../../home.svg";
 import { GoHome } from "react-icons/go";
 import { BsPiggyBank } from "react-icons/bs";
-import { MdPayment } from "react-icons/md";
+import { MdOutlineCategory, MdPayment } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+
+import "../../styles/common.css";
 
 const Sidebar = () => {
   const sideItems = [
     { name: "Home", Icon: GoHome, route: "/" },
     { name: "Payments", Icon: BsPiggyBank, route: "/payment" },
+    { name: "Categories", Icon: MdOutlineCategory, route: "/categories" },
     { name: "Budgets", Icon: MdPayment, route: "/budget" },
     { name: "Setting", Icon: IoSettingsOutline, route: "/setting" },
   ];
