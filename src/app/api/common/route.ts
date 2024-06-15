@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const body: z.infer<typeof bodySchema> = await req.json();
     bodySchema.parse(body)
     const {db} = await connect()
-    const collection = COLLECTIONS.CATEGORIES
+    const collection = COLLECTIONS[body.type.toUpperCase() as TCOLLECTIONS]
     const result = await db.collection(collection).insertOne({
       ...body.data,
       createdAt: new Date(),
@@ -38,9 +38,12 @@ export async function POST(req: Request) {
 }
 
 export async function GET(req: Request) {
+  const requestHeaders = new Headers(req.headers)
+  console.log('inside GET', requestHeaders.get('userId'))
+
   const {db} = await connect()
   const { searchParams } = new URL(req.url);
-  const type = searchParams.get('type')?.toUpperCase() as TCOLLECTIONS ?? 'CATEGORIES'
+  const type = searchParams.get('type')?.toUpperCase() as TCOLLECTIONS
   const collection = COLLECTIONS[type]
   const all = await db.collection(collection).find().toArray()
   return Response.json({

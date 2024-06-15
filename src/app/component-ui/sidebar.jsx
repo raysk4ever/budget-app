@@ -18,7 +18,6 @@ const Sidebar = () => {
   ];
 
   const path = usePathname();
-  console.log("path", path);
 
   return (
     <div className="sidebar-container">
