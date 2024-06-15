@@ -8,16 +8,24 @@ input, textarea, select {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 1rem;
   border: none;
+  width: 500px;
+  background-color: #eee;
   outline: none;
   resize: none;
 }
 
 input[type='button'], button {
-  background-color: var(--primary);
+  background-color: #e5a6d7;
   border: none;
-  border-radius: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  width: 100%;
+  padding: 15px 25px;
+  font-size: 18px;
+  color: white;
+  width: 150px;
+}
+input[type='button'], button.success{
+  background-color: #85bf85;
 }
 input[type='button']:hover, button:hover {
   opacity: .8;
