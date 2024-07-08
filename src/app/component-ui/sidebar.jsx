@@ -24,8 +24,16 @@ const Sidebar = () => {
       <aside className="sidebar-item-wrapper">
         {sideItems.map(({ Icon, name, route = "/" }, i) => (
           <Link
-            href={route}
-            className={`sidebar-item ${path === route ? "active" : ""}`}
+            href={`${route}`}
+            className={`sidebar-item ${
+              route === "/"
+                ? route === path
+                  ? "active"
+                  : ""
+                : path.includes(route)
+                ? "active"
+                : ""
+            }`}
             key={i}
           >
             <Icon size={28} />
