@@ -3,8 +3,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BiRupee } from "react-icons/bi";
 
+type TPayment = {
+  id: string;
+  amount: string;
+  description: string;
+  isCredit: boolean;
+  date: string;
+  category: string;
+};
+
 export default function Table() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<TPayment[]>([]);
 
   useEffect(() => {
     fetch("/api/payments")
