@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SETTINGS } from "@/config/settings";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
 
 import "../styles/globals.css";
 import Navbar from "./component-ui/navbar";
 import Sidebar from "./component-ui/sidebar";
-import '@/styles/scss/index.scss'
+import "@/styles/scss/index.scss";
 import { ActiveContent } from "@/components/activecontent";
+import ReduxProvider from "./component-ui/reduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 export const metadata: Metadata = {
   title: SETTINGS.TITLE,
@@ -24,16 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} main-layout main-container`}>
-        {/* <main className="main-container"> */}
-        <Navbar />
-        <section className="sub-container">
-          <Sidebar />
-          {/* <Content /> */}
-          <ActiveContent>
-            {children}
-          </ActiveContent>
-        </section>
-        {/* </main> */}
+        <ReduxProvider>
+          {/* <main className="main-container"> */}
+          <Navbar />
+          <section className="sub-container">
+            <Sidebar />
+            {/* <Content /> */}
+            <ActiveContent>{children}</ActiveContent>
+          </section>
+          {/* </main> */}
+          <ToastContainer />
+        </ReduxProvider>
       </body>
     </html>
   );
