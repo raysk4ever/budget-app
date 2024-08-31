@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## custom build
+[![Testing Github Action Pipeline](https://github.com/raysk4ever/budget-app/actions/workflows/main.yml/badge.svg)](https://github.com/raysk4ever/budget-app/actions/workflows/main.yml)
 ## Getting Started
 
 First, run the development server:
