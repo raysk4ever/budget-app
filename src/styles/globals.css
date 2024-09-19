@@ -6,7 +6,6 @@
 @import url('./budget.css');
 @import url('react-loading-skeleton/dist/skeleton.css');
 
-
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

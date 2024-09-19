@@ -4,10 +4,12 @@ import { SETTINGS } from "@/config/settings";
 
 import "../styles/globals.css";
 import Navbar from "./component-ui/navbar";
-import Nav from "./components/Nav";
 import Sidebar from "./component-ui/sidebar";
+import '@/styles/scss/index.scss'
+import { ActiveContent } from "@/components/activecontent";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: SETTINGS.TITLE,
@@ -27,9 +29,9 @@ export default function RootLayout({
         <section className="sub-container">
           <Sidebar />
           {/* <Content /> */}
-          <div className="active-sub-content">
+          <ActiveContent>
             {children}
-          </div>
+          </ActiveContent>
         </section>
         {/* </main> */}
       </body>

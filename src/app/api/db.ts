@@ -14,7 +14,8 @@ export const connect = async () => {
 
 export const COLLECTIONS = {
   CATEGORIES: 'categories',
-  PAYMENTS: 'payments'
+  PAYMENTS: 'payments',
+  BUDGET: 'budget'
 }
 export const ALL_COLLECTIONS = Object.values(COLLECTIONS)
 
